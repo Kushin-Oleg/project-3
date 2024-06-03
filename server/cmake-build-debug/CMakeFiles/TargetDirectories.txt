@@ -1,0 +1,4 @@
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/CMakeFiles/toolbox.dir
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/CMakeFiles/server.dir
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
