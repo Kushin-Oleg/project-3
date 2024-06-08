@@ -1,0 +1,23 @@
+# ninja log v6
+14	1173	1717811467846959842	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-download	7e47985f5268dda4
+1194	1199	1717811467873626510	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	8a9bf96006a8edbe
+1	14	1717811466686959827	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-mkdir	674e274cc929e909
+1183	1187	1717811467863626509	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	d6e27c69ab13412a
+14	1173	1717811467846959842	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/json.tar.xz	7e47985f5268dda4
+1178	1183	1717811467856959843	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	26057756d4aca883
+1183	1187	1717811467863626509	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-configure	d6e27c69ab13412a
+1204	1214	1717811467886959844	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	16c810930060e3a
+1178	1183	1717811467856959843	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-patch	26057756d4aca883
+1	14	1717811466686959827	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-mkdir	674e274cc929e909
+1173	1178	1717811467853626509	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	da6336a876b899e1
+1173	1178	1717811467853626509	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-update	da6336a876b899e1
+1199	1204	1717811467880293177	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	57697773bb4fb0d1
+14	1173	1717811467846959842	nlohmann_json-populate-prefix/src/json.tar.xz	7e47985f5268dda4
+1194	1199	1717811467873626510	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-install	8a9bf96006a8edbe
+1204	1214	1717811467886959844	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/CMakeFiles/nlohmann_json-populate-complete	16c810930060e3a
+14	1173	1717811467846959842	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-download	7e47985f5268dda4
+1187	1194	1717811467866959844	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	401feebcf0b1df99
+1204	1214	1717811467886959844	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-done	16c810930060e3a
+1204	1214	1717811467886959844	CMakeFiles/nlohmann_json-populate-complete	16c810930060e3a
+1187	1194	1717811467866959844	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-subbuild/nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-build	401feebcf0b1df99
+1199	1204	1717811467880293177	nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-test	57697773bb4fb0d1

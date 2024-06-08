@@ -1,5 +1,7 @@
 #include "httplib.h"
 #include "toolbox.h"
+#include "jwt.h"
+#include "ssl.h"
 
 using namespace httplib;
 
