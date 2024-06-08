@@ -1,4 +1,19 @@
 /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/kukushka/clion-2024.1.2/bin/ninja/linux/x64/ninja -G Ninja -S "/home/kukushka/Рабочий стол/project-3/server" -B "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
--- Configuring done (0.0s)
+-- Found OpenSSL: /usr/lib/libcrypto.so (found version "3.3.1")  
+-- Found OpenSSL: /usr/lib/libcrypto.so (found suitable version "3.3.1", minimum required is "1.0.1")  
+-- jwt-cpp: using FetchContent for nlohmann-json required for tests
+CMake Deprecation Warning at cmake-build-debug/_deps/nlohmann_json-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Using the multi-header code from /home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-src/include/
+-- Could NOT find jsoncons (missing: jsoncons_DIR)
+-- Could NOT find nlohmann_json (missing: nlohmann_json_DIR)
+-- Could NOT find jsoncpp (missing: jsoncpp_DIR)
+-- Configuring done (0.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/kukushka/Рабочий стол/project-3/server/cmake-build-debug
