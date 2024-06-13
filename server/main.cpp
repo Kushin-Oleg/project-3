@@ -3,14 +3,21 @@
 
 using namespace httplib;
 
-
 int main(){
     Server server; //создание веб-сервера
-    serv panel; //объект класса который реализует функционал веб-сервера
 
+    //прием secret для jwt токена
+    server.Post("/getkey", get_secret);
 
+    //создание пользователя
+    server.Post("/create_user)", reg_user_jwt);
 
+    //авторизация через существующий аккаунт
+    server.Post("/login_user", log_user_1);
+    server.Post("/login_user_code", log_user_2);
 
+    //создание листа to do
+    server.Post("/to_do_create", to_do_create);
 
     server.listen("localhost", 8090); //создание прослушиваемого порта веб-сервера
 }
