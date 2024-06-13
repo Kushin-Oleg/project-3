@@ -15,38 +15,9 @@
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__toolbox_Debug
-  command = $PRE_LINK && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
+  command = $PRE_LINK && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__server_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__server_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/server.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__server_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -77,35 +48,6 @@ rule CUSTOM_COMMAND
 
 
 #############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__print-claims_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__print-claims_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/print-claims.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__print-claims_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__print-claims_unscanned_Debug
@@ -122,35 +64,6 @@ rule CXX_EXECUTABLE_LINKER__print-claims_Debug
   command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__private-claims_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__private-claims_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/private-claims.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__private-claims_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -173,35 +86,6 @@ rule CXX_EXECUTABLE_LINKER__private-claims_Debug
 
 
 #############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__rsa-create_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__rsa-create_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/rsa-create.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__rsa-create_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__rsa-create_unscanned_Debug
@@ -218,35 +102,6 @@ rule CXX_EXECUTABLE_LINKER__rsa-create_Debug
   command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__rsa-verify_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__rsa-verify_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__rsa-verify_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -269,35 +124,6 @@ rule CXX_EXECUTABLE_LINKER__rsa-verify_Debug
 
 
 #############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__jwks-verify_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__jwks-verify_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__jwks-verify_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__jwks-verify_unscanned_Debug
@@ -314,35 +140,6 @@ rule CXX_EXECUTABLE_LINKER__jwks-verify_Debug
   command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__es256k_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__es256k_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/es256k.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__es256k_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -365,35 +162,6 @@ rule CXX_EXECUTABLE_LINKER__es256k_Debug
 
 
 #############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__partial-claim-verifier_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__partial-claim-verifier_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__partial-claim-verifier_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__partial-claim-verifier_unscanned_Debug
@@ -413,35 +181,6 @@ rule CXX_EXECUTABLE_LINKER__partial-claim-verifier_Debug
 
 
 #############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__boost_json_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__boost_json_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__boost_json_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
 # Rule for compiling CXX files.
 
 rule CXX_COMPILER__boost_json_unscanned_Debug
@@ -455,38 +194,9 @@ rule CXX_COMPILER__boost_json_unscanned_Debug
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__boost_json_Debug
-  command = $PRE_LINK && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
+  command = $PRE_LINK && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E rm -f $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__boost-json_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__boost-json_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__boost-json_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -506,35 +216,6 @@ rule CXX_EXECUTABLE_LINKER__boost-json_Debug
   command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
-
-
-#############################################
-# Rule for generating CXX dependencies.
-
-rule CXX_SCAN__nlohmann-json_Debug
-  depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
-  description = Scanning $in for CXX dependencies
-
-
-#############################################
-# Rule to generate ninja dyndep files for CXX.
-
-rule CXX_DYNDEP__nlohmann-json_Debug
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
-  description = Generating CXX dyndep file $out
-  rspfile = $out.rsp
-  rspfile_content = $in
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__nlohmann-json_scanned_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
-  description = Building CXX object $out
 
 
 #############################################
@@ -560,7 +241,7 @@ rule CXX_EXECUTABLE_LINKER__nlohmann-json_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  command = /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   description = Re-running CMake...
   generator = 1
 
@@ -569,7 +250,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /home/kukushka/clion-2024.1.2/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
+  command = /snap/clion/282/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -577,6 +258,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /home/kukushka/clion-2024.1.2/bin/ninja/linux/x64/ninja -t targets
+  command = /snap/clion/282/bin/ninja/linux/x64/ninja -t targets
   description = All primary targets available:
 

@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/include/json" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/include/jwt-cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/mongo-cxx-driver-releases-v3.10/build/src/bsoncxx/third_party/_deps/core-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/include/poco" vcs="Git" />
   </component>
 </project>

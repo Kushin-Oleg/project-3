@@ -1,0 +1,14 @@
+# Target labels
+ mongo-cxx-driver-populate
+# Source files and their labels
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate-complete.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-download.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-mkdir.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test.rule
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update.rule

@@ -55,15 +55,15 @@ build cmake_object_order_depends_target_toolbox: phony || CMakeFiles/toolbox.dir
 
 
 #############################################
-# Link the static library libtoolbox.a
+# Link the static library libtoolboxd.a
 
-build libtoolbox.a: CXX_STATIC_LIBRARY_LINKER__toolbox_Debug
+build libtoolboxd.a: CXX_STATIC_LIBRARY_LINKER__toolbox_Debug
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/toolbox.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = libtoolbox.a
-  TARGET_PDB = toolbox.a.dbg
+  TARGET_FILE = libtoolboxd.a
+  TARGET_PDB = toolboxd.a.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target server
@@ -74,24 +74,13 @@ build libtoolbox.a: CXX_STATIC_LIBRARY_LINKER__toolbox_Debug
 
 build cmake_object_order_depends_target_server: phony || CMakeFiles/server.dir
 
-build CMakeFiles/server.dir/main.cpp.o.ddi: CXX_SCAN__server_Debug /home/kukushka/Рабочий$ стол/project-3/server/main.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = CMakeFiles/server.dir/main.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/server.dir/main.cpp.o.ddi
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include/nlohmann" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
-  OBJ_FILE = CMakeFiles/server.dir/main.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/server.dir/main.cpp.o.ddi.i
-
-build CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_scanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/main.cpp || cmake_object_order_depends_target_server CMakeFiles/server.dir/CXX.dd CMakeFiles/server.dir/main.cpp.o.modmap
+build CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/main.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DPOCO_UNBUNDLED -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500
   DEP_FILE = CMakeFiles/server.dir/main.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/server.dir/main.cpp.o.modmap
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include/nlohmann" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
+  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include" -I"/home/kukushka/Рабочий стол/project-3/server/server" -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I"/home/kukushka/Рабочий стол/project-3/server/include/xlnt-568ac85346bc37757b0cd16464e7e1ea7656df91/include" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = CMakeFiles/server.dir
   OBJECT_FILE_DIR = CMakeFiles/server.dir
-  dyndep = CMakeFiles/server.dir/CXX.dd
-
-build CMakeFiles/server.dir/CXX.dd | /home/kukushka/Рабочий$ стол/project-3/server/cmake-build-debug/CMakeFiles/server.dir/CXXModules.json CMakeFiles/server.dir/main.cpp.o.modmap: CXX_DYNDEP__server_Debug CMakeFiles/server.dir/main.cpp.o.ddi
 
 
 # =============================================================================
@@ -101,9 +90,9 @@ build CMakeFiles/server.dir/CXX.dd | /home/kukushka/Рабочий$ стол/pro
 #############################################
 # Link the executable server
 
-build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/main.cpp.o | /usr/lib/libcrypto.so /usr/lib/libssl.so /usr/lib/libcrypto.so
+build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/main.cpp.o | /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libPocoNet.so.80 /usr/lib/x86_64-linux-gnu/libPocoFoundation.so.80 /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libpcre.so /usr/lib/x86_64-linux-gnu/libz.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libcrypto.so  /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libcrypto.so  /usr/lib/x86_64-linux-gnu/libssl.so  -lbsoncxx  -lmongocxx  -lbsoncxx  /usr/lib/x86_64-linux-gnu/libPocoNet.so.80  /usr/lib/x86_64-linux-gnu/libPocoFoundation.so.80  /usr/lib/x86_64-linux-gnu/libcrypto.so  -lmongocxx  /usr/lib/x86_64-linux-gnu/libpcre.so  /usr/lib/x86_64-linux-gnu/libz.so  -lpthread  -ldl  -lrt
   OBJECT_DIR = CMakeFiles/server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -115,7 +104,7 @@ build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/main.cpp
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -126,7 +115,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -144,7 +133,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -156,7 +145,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -168,7 +157,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -185,7 +174,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 # Utility command for edit_cache
 
 build include/jwt-cpp/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -196,7 +185,7 @@ build include/jwt-cpp/edit_cache: phony include/jwt-cpp/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build include/jwt-cpp/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -214,7 +203,7 @@ build include/jwt-cpp/list_install_components: phony
 # Utility command for install
 
 build include/jwt-cpp/CMakeFiles/install.util: CUSTOM_COMMAND include/jwt-cpp/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -226,7 +215,7 @@ build include/jwt-cpp/install: phony include/jwt-cpp/CMakeFiles/install.util
 # Utility command for install/local
 
 build include/jwt-cpp/CMakeFiles/install/local.util: CUSTOM_COMMAND include/jwt-cpp/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -238,7 +227,7 @@ build include/jwt-cpp/install/local: phony include/jwt-cpp/CMakeFiles/install/lo
 # Utility command for install/strip
 
 build include/jwt-cpp/CMakeFiles/install/strip.util: CUSTOM_COMMAND include/jwt-cpp/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -255,7 +244,7 @@ build include/jwt-cpp/install/strip: phony include/jwt-cpp/CMakeFiles/install/st
 # Utility command for edit_cache
 
 build _deps/nlohmann_json-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -266,7 +255,7 @@ build _deps/nlohmann_json-build/edit_cache: phony _deps/nlohmann_json-build/CMak
 # Utility command for rebuild_cache
 
 build _deps/nlohmann_json-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -284,7 +273,7 @@ build _deps/nlohmann_json-build/list_install_components: phony
 # Utility command for install
 
 build _deps/nlohmann_json-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/nlohmann_json-build/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -296,7 +285,7 @@ build _deps/nlohmann_json-build/install: phony _deps/nlohmann_json-build/CMakeFi
 # Utility command for install/local
 
 build _deps/nlohmann_json-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/nlohmann_json-build/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -308,7 +297,7 @@ build _deps/nlohmann_json-build/install/local: phony _deps/nlohmann_json-build/C
 # Utility command for install/strip
 
 build _deps/nlohmann_json-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/nlohmann_json-build/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-build" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -344,9 +333,9 @@ build include/jwt-cpp/example/CMakeFiles/print-claims.dir/print-claims.cpp.o: CX
 #############################################
 # Link the executable include/jwt-cpp/example/print-claims
 
-build include/jwt-cpp/example/print-claims: CXX_EXECUTABLE_LINKER__print-claims_Debug include/jwt-cpp/example/CMakeFiles/print-claims.dir/print-claims.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/print-claims: CXX_EXECUTABLE_LINKER__print-claims_Debug include/jwt-cpp/example/CMakeFiles/print-claims.dir/print-claims.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/print-claims.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -383,9 +372,9 @@ build include/jwt-cpp/example/CMakeFiles/private-claims.dir/private-claims.cpp.o
 #############################################
 # Link the executable include/jwt-cpp/example/private-claims
 
-build include/jwt-cpp/example/private-claims: CXX_EXECUTABLE_LINKER__private-claims_Debug include/jwt-cpp/example/CMakeFiles/private-claims.dir/private-claims.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/private-claims: CXX_EXECUTABLE_LINKER__private-claims_Debug include/jwt-cpp/example/CMakeFiles/private-claims.dir/private-claims.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/private-claims.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -416,9 +405,9 @@ build include/jwt-cpp/example/CMakeFiles/rsa-create.dir/rsa-create.cpp.o: CXX_CO
 #############################################
 # Link the executable include/jwt-cpp/example/rsa-create
 
-build include/jwt-cpp/example/rsa-create: CXX_EXECUTABLE_LINKER__rsa-create_Debug include/jwt-cpp/example/CMakeFiles/rsa-create.dir/rsa-create.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/rsa-create: CXX_EXECUTABLE_LINKER__rsa-create_Debug include/jwt-cpp/example/CMakeFiles/rsa-create.dir/rsa-create.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/rsa-create.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -455,9 +444,9 @@ build include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/rsa-verify.cpp.o: CXX_CO
 #############################################
 # Link the executable include/jwt-cpp/example/rsa-verify
 
-build include/jwt-cpp/example/rsa-verify: CXX_EXECUTABLE_LINKER__rsa-verify_Debug include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/rsa-verify.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/rsa-verify: CXX_EXECUTABLE_LINKER__rsa-verify_Debug include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/rsa-verify.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/rsa-verify.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -494,9 +483,9 @@ build include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o: CXX_
 #############################################
 # Link the executable include/jwt-cpp/example/jwks-verify
 
-build include/jwt-cpp/example/jwks-verify: CXX_EXECUTABLE_LINKER__jwks-verify_Debug include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/jwks-verify: CXX_EXECUTABLE_LINKER__jwks-verify_Debug include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/jwks-verify.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -533,9 +522,9 @@ build include/jwt-cpp/example/CMakeFiles/es256k.dir/es256k.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable include/jwt-cpp/example/es256k
 
-build include/jwt-cpp/example/es256k: CXX_EXECUTABLE_LINKER__es256k_Debug include/jwt-cpp/example/CMakeFiles/es256k.dir/es256k.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/es256k: CXX_EXECUTABLE_LINKER__es256k_Debug include/jwt-cpp/example/CMakeFiles/es256k.dir/es256k.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/es256k.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -566,9 +555,9 @@ build include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/partial-clai
 #############################################
 # Link the executable include/jwt-cpp/example/partial-claim-verifier
 
-build include/jwt-cpp/example/partial-claim-verifier: CXX_EXECUTABLE_LINKER__partial-claim-verifier_Debug include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/partial-claim-verifier.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/partial-claim-verifier: CXX_EXECUTABLE_LINKER__partial-claim-verifier_Debug include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/partial-claim-verifier.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -580,7 +569,7 @@ build include/jwt-cpp/example/partial-claim-verifier: CXX_EXECUTABLE_LINKER__par
 # Utility command for edit_cache
 
 build include/jwt-cpp/example/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -591,7 +580,7 @@ build include/jwt-cpp/example/edit_cache: phony include/jwt-cpp/example/CMakeFil
 # Utility command for rebuild_cache
 
 build include/jwt-cpp/example/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -609,7 +598,7 @@ build include/jwt-cpp/example/list_install_components: phony
 # Utility command for install
 
 build include/jwt-cpp/example/CMakeFiles/install.util: CUSTOM_COMMAND include/jwt-cpp/example/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -621,7 +610,7 @@ build include/jwt-cpp/example/install: phony include/jwt-cpp/example/CMakeFiles/
 # Utility command for install/local
 
 build include/jwt-cpp/example/CMakeFiles/install/local.util: CUSTOM_COMMAND include/jwt-cpp/example/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -633,7 +622,7 @@ build include/jwt-cpp/example/install/local: phony include/jwt-cpp/example/CMake
 # Utility command for install/strip
 
 build include/jwt-cpp/example/CMakeFiles/install/strip.util: CUSTOM_COMMAND include/jwt-cpp/example/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -696,15 +685,15 @@ build include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/private-boost-jso
 
 
 #############################################
-# Link the static library include/jwt-cpp/example/traits/libboost_json.a
+# Link the static library include/jwt-cpp/example/traits/libboost_jsond.a
 
-build include/jwt-cpp/example/traits/libboost_json.a: CXX_STATIC_LIBRARY_LINKER__boost_json_Debug include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/private-boost-json.cpp.o
+build include/jwt-cpp/example/traits/libboost_jsond.a: CXX_STATIC_LIBRARY_LINKER__boost_json_Debug include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/private-boost-json.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = include/jwt-cpp/example/traits/libboost_json.a
-  TARGET_PDB = boost_json.a.dbg
+  TARGET_FILE = include/jwt-cpp/example/traits/libboost_jsond.a
+  TARGET_PDB = boost_jsond.a.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target boost-json
@@ -731,9 +720,9 @@ build include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/boost-json.cpp.o:
 #############################################
 # Link the executable include/jwt-cpp/example/traits/boost-json
 
-build include/jwt-cpp/example/traits/boost-json: CXX_EXECUTABLE_LINKER__boost-json_Debug include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/boost-json.cpp.o | include/jwt-cpp/example/traits/libboost_json.a /usr/lib/libssl.so /usr/lib/libcrypto.so || include/jwt-cpp/example/traits/libboost_json.a
+build include/jwt-cpp/example/traits/boost-json: CXX_EXECUTABLE_LINKER__boost-json_Debug include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/boost-json.cpp.o | include/jwt-cpp/example/traits/libboost_jsond.a /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so || include/jwt-cpp/example/traits/libboost_jsond.a
   FLAGS = -g
-  LINK_LIBRARIES = include/jwt-cpp/example/traits/libboost_json.a  /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = include/jwt-cpp/example/traits/libboost_jsond.a  /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -764,9 +753,9 @@ build include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/nlohmann-json.
 #############################################
 # Link the executable include/jwt-cpp/example/traits/nlohmann-json
 
-build include/jwt-cpp/example/traits/nlohmann-json: CXX_EXECUTABLE_LINKER__nlohmann-json_Debug include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/nlohmann-json.cpp.o | /usr/lib/libssl.so /usr/lib/libcrypto.so
+build include/jwt-cpp/example/traits/nlohmann-json: CXX_EXECUTABLE_LINKER__nlohmann-json_Debug include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/nlohmann-json.cpp.o | /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libssl.so  /usr/lib/libcrypto.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -778,7 +767,7 @@ build include/jwt-cpp/example/traits/nlohmann-json: CXX_EXECUTABLE_LINKER__nlohm
 # Utility command for edit_cache
 
 build include/jwt-cpp/example/traits/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -789,7 +778,7 @@ build include/jwt-cpp/example/traits/edit_cache: phony include/jwt-cpp/example/t
 # Utility command for rebuild_cache
 
 build include/jwt-cpp/example/traits/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S"/home/kukushka/Рабочий стол/project-3/server" -B"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -807,7 +796,7 @@ build include/jwt-cpp/example/traits/list_install_components: phony
 # Utility command for install
 
 build include/jwt-cpp/example/traits/CMakeFiles/install.util: CUSTOM_COMMAND include/jwt-cpp/example/traits/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
   DESC = Install the project...
   pool = console
   restat = 1
@@ -819,7 +808,7 @@ build include/jwt-cpp/example/traits/install: phony include/jwt-cpp/example/trai
 # Utility command for install/local
 
 build include/jwt-cpp/example/traits/CMakeFiles/install/local.util: CUSTOM_COMMAND include/jwt-cpp/example/traits/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -831,7 +820,7 @@ build include/jwt-cpp/example/traits/install/local: phony include/jwt-cpp/exampl
 # Utility command for install/strip
 
 build include/jwt-cpp/example/traits/CMakeFiles/install/strip.util: CUSTOM_COMMAND include/jwt-cpp/example/traits/all
-  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cd "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits" && /snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -843,7 +832,7 @@ build include/jwt-cpp/example/traits/install/strip: phony include/jwt-cpp/exampl
 
 build boost-json: phony include/jwt-cpp/example/traits/boost-json
 
-build boost_json: phony include/jwt-cpp/example/traits/libboost_json.a
+build boost_json: phony include/jwt-cpp/example/traits/libboost_jsond.a
 
 build es256k: phony include/jwt-cpp/example/es256k
 
@@ -851,7 +840,7 @@ build jwks-verify: phony include/jwt-cpp/example/jwks-verify
 
 build jwks-verify-run: phony include/jwt-cpp/example/jwks-verify-run
 
-build libboost_json.a: phony include/jwt-cpp/example/traits/libboost_json.a
+build libboost_jsond.a: phony include/jwt-cpp/example/traits/libboost_jsond.a
 
 build nlohmann-json: phony include/jwt-cpp/example/traits/nlohmann-json
 
@@ -871,7 +860,7 @@ build rsa-verify: phony include/jwt-cpp/example/rsa-verify
 
 build rsa-verify-run: phony include/jwt-cpp/example/rsa-verify-run
 
-build toolbox: phony libtoolbox.a
+build toolbox: phony libtoolboxd.a
 
 # =============================================================================
 # Folder targets.
@@ -881,7 +870,7 @@ build toolbox: phony libtoolbox.a
 #############################################
 # Folder: /home/kukushka/Рабочий стол/project-3/server/cmake-build-debug
 
-build all: phony libtoolbox.a server include/jwt-cpp/all
+build all: phony libtoolboxd.a server include/jwt-cpp/all
 
 # =============================================================================
 
@@ -909,7 +898,7 @@ build include/jwt-cpp/example/all: phony include/jwt-cpp/example/print-claims in
 #############################################
 # Folder: /home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits
 
-build include/jwt-cpp/example/traits/all: phony include/jwt-cpp/example/traits/libboost_json.a include/jwt-cpp/example/traits/boost-json include/jwt-cpp/example/traits/nlohmann-json
+build include/jwt-cpp/example/traits/all: phony include/jwt-cpp/example/traits/libboost_jsond.a include/jwt-cpp/example/traits/boost-json include/jwt-cpp/example/traits/nlohmann-json
 
 # =============================================================================
 # Built-in targets
@@ -918,14 +907,14 @@ build include/jwt-cpp/example/traits/all: phony include/jwt-cpp/example/traits/l
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-ExactVersion.cmake.in /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindOpenSSL.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kukushka/Рабочий$ стол/project-3/server/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/jwt-cpp-config.cmake.in /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-boost-json.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-kazuho-picojson.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/nlohmann_json-src/CMakeLists.txt _deps/nlohmann_json-src/cmake/config.cmake.in _deps/nlohmann_json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/nlohmann_json-src/cmake/pkg-config.pc.in include/jwt-cpp/example/traits/private-boost-json.cpp.in
+build build.ninja: RERUN_CMAKE | /home/kukushka/Рабочий$ стол/project-3/server/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/jwt-cpp-config.cmake.in /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-boost-json.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-kazuho-picojson.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/CMakeLists.txt /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-ExactVersion.cmake.in /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindOpenSSL.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindZLIB.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/FindPCRE.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetTargets.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/nlohmann_json-src/CMakeLists.txt _deps/nlohmann_json-src/cmake/config.cmake.in _deps/nlohmann_json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/nlohmann_json-src/cmake/pkg-config.pc.in include/jwt-cpp/example/traits/private-boost-json.cpp.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-ExactVersion.cmake.in /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindOpenSSL.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kukushka/Рабочий$ стол/project-3/server/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/jwt-cpp-config.cmake.in /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-boost-json.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-kazuho-picojson.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/nlohmann_json-src/CMakeLists.txt _deps/nlohmann_json-src/cmake/config.cmake.in _deps/nlohmann_json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/nlohmann_json-src/cmake/pkg-config.pc.in include/jwt-cpp/example/traits/private-boost-json.cpp.in: phony
+build /home/kukushka/Рабочий$ стол/project-3/server/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/jwt-cpp-config.cmake.in /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-boost-json.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/cmake/private-find-kazuho-picojson.cmake /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/CMakeLists.txt /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/CMakeLists.txt /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-ExactVersion.cmake.in /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindOpenSSL.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindZLIB.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/FindPCRE.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetTargets.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/nlohmann_json-src/CMakeLists.txt _deps/nlohmann_json-src/cmake/config.cmake.in _deps/nlohmann_json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/nlohmann_json-src/cmake/pkg-config.pc.in include/jwt-cpp/example/traits/private-boost-json.cpp.in: phony
 
 
 #############################################

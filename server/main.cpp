@@ -1,7 +1,5 @@
 #include "httplib.h"
 #include "toolbox.h"
-#include "jwt.h"
-#include "ssl.h"
 
 using namespace httplib;
 
@@ -9,6 +7,7 @@ using namespace httplib;
 int main(){
     Server server; //создание веб-сервера
     serv panel; //объект класса который реализует функционал веб-сервера
+
 
 
 

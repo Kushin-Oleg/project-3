@@ -1,6 +1,6 @@
-/home/kukushka/clion-2024.1.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/kukushka/clion-2024.1.2/bin/ninja/linux/x64/ninja -G Ninja -S "/home/kukushka/Рабочий стол/project-3/server" -B "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
--- Found OpenSSL: /usr/lib/libcrypto.so (found version "3.3.1")  
--- Found OpenSSL: /usr/lib/libcrypto.so (found suitable version "3.3.1", minimum required is "1.0.1")  
+/snap/clion/282/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/282/bin/ninja/linux/x64/ninja -G Ninja -S "/home/kukushka/Рабочий стол/project-3/server" -B "/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug"
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found suitable version "3.0.13", minimum required is "1.0.1")  
 -- jwt-cpp: using FetchContent for nlohmann-json required for tests
 CMake Deprecation Warning at cmake-build-debug/_deps/nlohmann_json-src/CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of

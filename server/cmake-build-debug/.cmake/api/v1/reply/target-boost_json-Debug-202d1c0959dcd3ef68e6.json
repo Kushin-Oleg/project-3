@@ -1,0 +1,154 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "include/jwt-cpp/example/traits/libboost_jsond.a"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"target_compile_definitions",
+			"include_directories",
+			"target_compile_features"
+		],
+		"files" : 
+		[
+			"include/jwt-cpp/cmake/private-find-boost-json.cmake",
+			"include/jwt-cpp/example/traits/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 14,
+				"parent" : 2
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 6,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 2
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++23 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "BOOST_JSON_STANDALONE"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/include/cpp-httplib-master"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					7
+				],
+				"standard" : "26"
+			},
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"id" : "boost_json::@5a1719a0859bf68162ed",
+	"name" : "boost_json",
+	"nameOnDisk" : "libboost_jsond.a",
+	"paths" : 
+	{
+		"build" : "include/jwt-cpp/example/traits",
+		"source" : "include/jwt-cpp/example/traits"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"path" : "/usr/include/boost/json.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"path" : "/usr/include/boost/json/src.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "cmake-build-debug/include/jwt-cpp/example/traits/private-boost-json.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

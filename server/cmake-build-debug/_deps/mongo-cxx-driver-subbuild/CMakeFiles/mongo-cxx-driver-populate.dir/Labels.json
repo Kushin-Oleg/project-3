@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate-complete.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-download.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test.rule"
+		},
+		{
+			"file" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"mongo-cxx-driver-populate"
+		],
+		"name" : "mongo-cxx-driver-populate"
+	}
+}

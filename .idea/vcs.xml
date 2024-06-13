@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/cmake-build-debug/_deps/mongo-cxx-driver-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/include/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/include/jwt-cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/include/mongo-cxx-driver-r3.10.1/build/src/bsoncxx/third_party/_deps/core-src" vcs="Git" />
+  </component>
+</project>

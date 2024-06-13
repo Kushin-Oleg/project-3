@@ -1,0 +1,3 @@
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate.dir
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/edit_cache.dir
+/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/rebuild_cache.dir

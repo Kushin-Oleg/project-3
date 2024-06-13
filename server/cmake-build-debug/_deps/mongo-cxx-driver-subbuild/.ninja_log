@@ -1,0 +1,37 @@
+# ninja log v6
+0	7	1717962148190020058	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-mkdir	c92e3c22760d8f9
+0	7	1717962148190020058	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-mkdir	c92e3c22760d8f9
+24	29	1717965359586730996	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure	8d6816cb9b57a6ed
+39	46	1717965359603397663	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test	6e4a4cc48ec2bcbf
+20	24	1717965359583397663	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch	a76378f5d631a9b7
+11	20	1717965359570064330	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update	2fdda8c20e87b2bd
+24	29	1717965359586730996	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure	8d6816cb9b57a6ed
+46	53	1717965359610064330	CMakeFiles/mongo-cxx-driver-populate-complete	600dd02bbb93c4b6
+46	53	1717965359610064330	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate-complete	600dd02bbb93c4b6
+1	11	1717965359570064330	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-download	a4738f12beddd732
+39	46	1717965359603397663	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test	6e4a4cc48ec2bcbf
+34	39	1717965359596730997	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install	b0201649837639cb
+1	11	1717965359570064330	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-download	a4738f12beddd732
+46	53	1717965359610064330	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-done	600dd02bbb93c4b6
+29	34	1717965359590064330	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build	636750e608010595
+34	39	1717965359596730997	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install	b0201649837639cb
+46	53	1717965359610064330	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-done	600dd02bbb93c4b6
+11	20	1717965359570064330	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update	2fdda8c20e87b2bd
+20	24	1717965359583397663	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch	a76378f5d631a9b7
+29	34	1717965359590064330	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build	636750e608010595
+0	8	1717965635460068136	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update	2fdda8c20e87b2bd
+0	8	1717965635460068136	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-update	2fdda8c20e87b2bd
+8	13	1717965635473401470	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch	a76378f5d631a9b7
+8	13	1717965635473401470	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-patch	a76378f5d631a9b7
+13	18	1717965635476734803	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure	8d6816cb9b57a6ed
+13	18	1717965635476734803	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-configure	8d6816cb9b57a6ed
+18	22	1717965635480068137	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build	636750e608010595
+18	22	1717965635480068137	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-build	636750e608010595
+22	27	1717965635486734804	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install	b0201649837639cb
+22	27	1717965635486734804	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-install	b0201649837639cb
+27	33	1717965635490068136	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test	6e4a4cc48ec2bcbf
+27	33	1717965635490068136	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-test	6e4a4cc48ec2bcbf
+33	39	1717965635496734803	CMakeFiles/mongo-cxx-driver-populate-complete	600dd02bbb93c4b6
+33	39	1717965635496734803	mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-done	600dd02bbb93c4b6
+33	39	1717965635496734803	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/CMakeFiles/mongo-cxx-driver-populate-complete	600dd02bbb93c4b6
+33	39	1717965635496734803	/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/mongo-cxx-driver-subbuild/mongo-cxx-driver-populate-prefix/src/mongo-cxx-driver-populate-stamp/mongo-cxx-driver-populate-done	600dd02bbb93c4b6

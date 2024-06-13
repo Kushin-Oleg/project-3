@@ -12,9 +12,31 @@ set_target_properties(toolbox PROPERTIES LINKER_LANGUAGE CXX)
 find_package(OpenSSL REQUIRED)
 #jwt
 add_subdirectory(include/jwt-cpp)
-#json
-include_directories(include/json/include/nlohmann)
+#библиотека для json
+include_directories(include/json/include)
+#подключение mongodb
+set(ENV{PKG_CONFIG_PATH} /usr/lib/pkgconfig)
+find_package(PkgConfig)
+pkg_search_module(BSON REQUIRED libbsoncxx)
+pkg_search_module(MONGO REQUIRED libmongocxx)
+
+include_directories(server
+        ${BSON_INCLUDE_DIRS}
+        ${MONGO_INCLUDE_DIRS})
+#подключил библиотеку для парсинга таблиц эксель
+include_directories(include/xlnt-568ac85346bc37757b0cd16464e7e1ea7656df91/include)
+
+#
+set(Poco_DIR "/usr/local/lib/cmake/Poco")
+find_package(Poco REQUIRED COMPONENTS Net Foundation)
 #создание исполниельного файла
 add_executable(server main.cpp)
 target_link_libraries(server PRIVATE jwt-cpp)
 target_link_libraries(server PRIVATE OpenSSL::Crypto OpenSSL::SSL)
+
+target_link_libraries(server PRIVATE
+        ${BSON_LIBRARIES}
+        ${MONGO_LIBRARIES}
+)
+
+target_link_libraries(server PRIVATE ${Poco_LIBRARIES})
