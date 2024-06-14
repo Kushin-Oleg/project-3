@@ -24,7 +24,6 @@ include_directories(server
         ${BSON_INCLUDE_DIRS}
         ${MONGO_INCLUDE_DIRS})
 #подключил библиотеку для парсинга таблиц эксель
-include_directories(include/xlnt-568ac85346bc37757b0cd16464e7e1ea7656df91/include)
 
 #подключил библиотеку для авторизации
 set(Poco_DIR "/usr/local/lib/cmake/Poco")

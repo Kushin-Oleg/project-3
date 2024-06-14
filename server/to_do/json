@@ -6,3 +6,26 @@
 "data" : ___
 "name_sozdatela" : ___
 }
+
+
+Сам to do лист
+{
+"_id":"64978f23a1b1c9d5e8f8a1b1", //делает сам mongodb
+"userId":"student1@example.com",
+"name":"Эссе по истории",
+"deadline":"2024-06-30",
+"predmet":"История России",
+"opisanie":"Написать эссе о влиянии Петра I на развитие России",
+"data":"dfdf",
+"teacher":"Иванов И.И.",
+"group":"ИСТ-201",
+"isCompleted":false
+}
+
+
+индивидуальное для пользователя
+{"_id":{"$oid":"666c751da10a67a639cb4a10"},
+"userId":"student1@example.com",
+"deadlineId":"64978f23a1b1c9d5e8f8a1b1",
+"isCompleted":true
+}

@@ -78,7 +78,7 @@ build CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /ho
   DEFINES = -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DPOCO_UNBUNDLED -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500
   DEP_FILE = CMakeFiles/server.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include" -I"/home/kukushka/Рабочий стол/project-3/server/server" -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I"/home/kukushka/Рабочий стол/project-3/server/include/xlnt-568ac85346bc37757b0cd16464e7e1ea7656df91/include" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
+  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include" -I"/home/kukushka/Рабочий стол/project-3/server/server" -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = CMakeFiles/server.dir
   OBJECT_FILE_DIR = CMakeFiles/server.dir
 

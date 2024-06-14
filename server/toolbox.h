@@ -16,7 +16,7 @@
 
 #include "parsing.h"
 
-#include "xlnt/xlnt.hpp"
+//#include "xlnt/xlnt.hpp"
 
 #include <Poco/Net/MailMessage.h>
 #include <Poco/Net/MailRecipient.h>
@@ -51,6 +51,7 @@ auto database = client["server"];                     //подключаемся
 auto collection_rasp = database["raspisanie"];             //подключаемся к коллекции raspisanie
 auto collection_user = database["user"];                   //подключаемя к коллекции user
 auto collection_to_do = database["to do"];                 //подключаемя к коллекции to do
+auto collection_to_do_complited = database["to do complited"];
 /////////////////////////////////
 
 
@@ -144,6 +145,7 @@ auto jwt_decode(std::string& token){
         std::string data1 = "create/login user";
         std::string data2 = "get code";
         std::string data3 = "to do create";
+        std::string data4 = "to do scan";
 
         //извлечение данных
         if(data1 == decoded_token.get_payload_claim("command").as_string()){
@@ -160,16 +162,23 @@ auto jwt_decode(std::string& token){
         }
 
         if(data3 == decoded_token.get_payload_claim("command").as_string()){
+            std::string user_id = decoded_token.get_payload_claim("userId").as_string();
             std::string name = decoded_token.get_payload_claim("name").as_string();
             std::string deadline = decoded_token.get_payload_claim("predmet").as_string();
             std::string predmet = decoded_token.get_payload_claim("predmet").as_string();
             std::string opisanie = decoded_token.get_payload_claim("opisanie").as_string();
-            std::string time = decoded_token.get_payload_claim("time").as_string();
-            std::string sozdatel = decoded_token.get_payload_claim("sozdatel").as_string();
+            std::string data = decoded_token.get_payload_claim("data").as_string();
+            std::string teacher = decoded_token.get_payload_claim("teacher").as_string();
+            std::string group = decoded_token.get_payload_claim("group").as_string();
+            std::string isCompleted = decoded_token.get_payload_claim("isCompleted").as_string();
 
-            std::vector<std::string> data {name, deadline, predmet, opisanie, time, sozdatel};
+            std::vector<std::string> vecd {name, deadline, predmet, opisanie, data, teacher, group, isCompleted};
 
-            return data;
+            return vecd;
+        }
+
+        if(data4 == decoded_token.get_payload_claim("command").as_string()){
+            std::string group = decoded_token.get_payload_claim("group").as_string();
         }
 
         std::cout << "JWT токен успешно расшифрован";
@@ -315,17 +324,29 @@ void to_do_create(const httplib::Request& req, httplib::Response& res){
     std::vector<std::string> data = jwt_decode(jwt);
 
     bsoncxx::document::value doc_value = document{}
-            << "name" << data[0]
-            << "deadline" << data[1]
-            << "predmet" << data[2]
-            << "opisanie" << data[3]
-            << "time" << data[4]
-            << "sozdatel" << data[5]
+            << "userId" << data[0]
+            << "name" << data[1]
+            << "deadline" << data[2]
+            << "predmet" << data[3]
+            << "opisanie" << data[4]
+            << "data" << data[5]
+            << "teacher" << data[6]
+            << "group" << data[7]
+            << "isCompleted" << data[8]
             << finalize;
 
     bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_to_do.insert_one(doc_value.view());
 }
 
-void to_do_scan(){
-    
+void to_do_scan(const httplib::Request& req, httplib::Response& res){
+    std::string jwt = req.has_param("JWT") ? req.get_param_value("JWT") : ""; //проверка на присутствие данных на JWT
+
+
+
+
+    document filter_doc{};
+    filter_doc << "group" << ;
+
+
+    //res.set_content(, "application/json")
 }

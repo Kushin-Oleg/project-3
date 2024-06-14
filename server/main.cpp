@@ -19,5 +19,12 @@ int main(){
     //создание листа to do
     server.Post("/to_do_create", to_do_create);
 
+    //проверка новых листов to do и их отправка
+    server.Post("/to_do_scan", to_do_scan);
+
+    //пост запрос для qr кода
+
+
+
     server.listen("localhost", 8090); //создание прослушиваемого порта веб-сервера
 }
