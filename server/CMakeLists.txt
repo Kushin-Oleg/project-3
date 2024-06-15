@@ -1,7 +1,7 @@
 #установка версий, языка и названия
 cmake_minimum_required(VERSION 3.28)
 project(server)
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
  #добавил библиотеку http
 include_directories(include/cpp-httplib-master)
 #добавил библиотеку-сноску где у меня будет реализован функционал приложения
@@ -29,6 +29,8 @@ find_package(Xlnt CONFIG REQUIRED)
 set(Poco_DIR "/usr/local/lib/cmake/Poco")
 find_package(Poco REQUIRED COMPONENTS Net Foundation)
 find_package(Poco REQUIRED COMPONENTS NetSSL)
+#добавил мультипарсер для нестандартного файла MIME
+include_directories(include/multipart-parser)
 #создание исполниельного файла
 add_executable(server main.cpp)
 target_link_libraries(server PRIVATE jwt-cpp)

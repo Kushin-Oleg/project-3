@@ -14,9 +14,8 @@ CMake Deprecation Warning at cmake-build-debug/_deps/nlohmann_json-src/CMakeList
 -- Could NOT find jsoncons (missing: jsoncons_DIR)
 -- Could NOT find nlohmann_json (missing: nlohmann_json_DIR)
 -- Could NOT find jsoncpp (missing: jsoncpp_DIR)
--- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.6.1") 
 -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13") found components: Crypto 
 -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13") found components: SSL 
--- Configuring done (0.1s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/kukushka/Рабочий стол/project-3/server/cmake-build-debug

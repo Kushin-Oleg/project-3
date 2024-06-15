@@ -22,11 +22,14 @@ int main(){
     //проверка новых листов to do и их отправка
     server.Post("/to_do_scan", to_do_scan);
 
-    //
+    //помечается как завершенная задача
+    server.Post("/to_do_is_complete", to_do_is_complite);
 
-    //пост запрос для qr кода
+    //удаляем задачу
+    server.Post("/del_to_do", to_do_del);
 
-
+    //создаём расписание
+    server.Post("create raspisanie", add_raspisanie);
 
     server.listen("localhost", 8090); //создание прослушиваемого порта веб-сервера
 }

@@ -19,7 +19,7 @@ void parsing() {
     json json_data;
 
     xlnt::workbook wb;
-    wb.load("rasp/raspisanie.xlsx");
+    wb.load("rasp/outfile.xlsx");
 
     for (int shit = 0; shit < wb.sheet_count(); shit++)
     {
@@ -140,7 +140,7 @@ void parsing() {
             curr_days = {};
         }
 
-        std::ofstream file("json_rasp/virus.json");
+        std::ofstream file("json_rasp/gotovoe.json");
         file << std::setw(4) << json_data << std::endl;
     }
 }

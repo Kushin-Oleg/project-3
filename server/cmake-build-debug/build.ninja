@@ -77,8 +77,8 @@ build cmake_object_order_depends_target_server: phony || CMakeFiles/server.dir
 build CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/main.cpp || cmake_object_order_depends_target_server
   DEFINES = -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DPOCO_UNBUNDLED -DXLNT_STATIC=1 -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500
   DEP_FILE = CMakeFiles/server.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include" -I"/home/kukushka/Рабочий стол/project-3/server/server" -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include" -isystem /home/kukushka/vcpkg/installed/x64-linux/include
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/json/include" -I"/home/kukushka/Рабочий стол/project-3/server/server" -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/mongocxx/v_noabi -I"/home/kukushka/Рабочий стол/project-3/server/include/multipart-parser" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include" -isystem /home/kukushka/vcpkg/installed/x64-linux/include
   OBJECT_DIR = CMakeFiles/server.dir
   OBJECT_FILE_DIR = CMakeFiles/server.dir
 
@@ -320,7 +320,7 @@ build cmake_object_order_depends_target_print-claims: phony || include/jwt-cpp/e
 
 build include/jwt-cpp/example/CMakeFiles/print-claims.dir/print-claims.cpp.o: CXX_COMPILER__print-claims_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/print-claims.cpp || cmake_object_order_depends_target_print-claims
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/print-claims.dir/print-claims.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/print-claims.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/print-claims.dir
@@ -359,7 +359,7 @@ build cmake_object_order_depends_target_private-claims: phony || include/jwt-cpp
 
 build include/jwt-cpp/example/CMakeFiles/private-claims.dir/private-claims.cpp.o: CXX_COMPILER__private-claims_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/private-claims.cpp || cmake_object_order_depends_target_private-claims
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/private-claims.dir/private-claims.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/private-claims.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/private-claims.dir
@@ -392,7 +392,7 @@ build cmake_object_order_depends_target_rsa-create: phony || include/jwt-cpp/exa
 
 build include/jwt-cpp/example/CMakeFiles/rsa-create.dir/rsa-create.cpp.o: CXX_COMPILER__rsa-create_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/rsa-create.cpp || cmake_object_order_depends_target_rsa-create
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/rsa-create.dir/rsa-create.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/rsa-create.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/rsa-create.dir
@@ -431,7 +431,7 @@ build cmake_object_order_depends_target_rsa-verify: phony || include/jwt-cpp/exa
 
 build include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/rsa-verify.cpp.o: CXX_COMPILER__rsa-verify_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/rsa-verify.cpp || cmake_object_order_depends_target_rsa-verify
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/rsa-verify.dir/rsa-verify.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/rsa-verify.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/rsa-verify.dir
@@ -470,7 +470,7 @@ build cmake_object_order_depends_target_jwks-verify: phony || include/jwt-cpp/ex
 
 build include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o: CXX_COMPILER__jwks-verify_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/jwks-verify.cpp || cmake_object_order_depends_target_jwks-verify
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/jwks-verify.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/jwks-verify.dir
@@ -509,7 +509,7 @@ build cmake_object_order_depends_target_es256k: phony || include/jwt-cpp/example
 
 build include/jwt-cpp/example/CMakeFiles/es256k.dir/es256k.cpp.o: CXX_COMPILER__es256k_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/es256k.cpp || cmake_object_order_depends_target_es256k
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/es256k.dir/es256k.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/es256k.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/es256k.dir
@@ -542,7 +542,7 @@ build cmake_object_order_depends_target_partial-claim-verifier: phony || include
 
 build include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/partial-claim-verifier.cpp.o: CXX_COMPILER__partial-claim-verifier_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/partial-claim-verifier.cpp || cmake_object_order_depends_target_partial-claim-verifier
   DEP_FILE = include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir/partial-claim-verifier.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include" -I"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-src/include"
   OBJECT_DIR = include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/CMakeFiles/partial-claim-verifier.dir
@@ -674,7 +674,7 @@ build cmake_object_order_depends_target_boost_json: phony || include/jwt-cpp/exa
 build include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/private-boost-json.cpp.o: CXX_COMPILER__boost_json_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/cmake-build-debug/include/jwt-cpp/example/traits/private-boost-json.cpp || cmake_object_order_depends_target_boost_json
   DEFINES = -DBOOST_JSON_STANDALONE
   DEP_FILE = include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir/private-boost-json.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master"
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost_json.dir
@@ -707,7 +707,7 @@ build cmake_object_order_depends_target_boost-json: phony || cmake_object_order_
 build include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/boost-json.cpp.o: CXX_COMPILER__boost-json_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/boost-json.cpp || cmake_object_order_depends_target_boost-json
   DEFINES = -DBOOST_JSON_STANDALONE
   DEP_FILE = include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir/boost-json.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/traits/CMakeFiles/boost-json.dir
@@ -740,7 +740,7 @@ build cmake_object_order_depends_target_nlohmann-json: phony || include/jwt-cpp/
 
 build include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/nlohmann-json.cpp.o: CXX_COMPILER__nlohmann-json_unscanned_Debug /home/kukushka/Рабочий$ стол/project-3/server/include/jwt-cpp/example/traits/nlohmann-json.cpp || cmake_object_order_depends_target_nlohmann-json
   DEP_FILE = include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir/nlohmann-json.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I"/home/kukushka/Рабочий стол/project-3/server/include/cpp-httplib-master" -I"/home/kukushka/Рабочий стол/project-3/server/cmake-build-debug/_deps/nlohmann_json-src/include" -I"/home/kukushka/Рабочий стол/project-3/server/include/jwt-cpp/include"
   OBJECT_DIR = include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir
   OBJECT_FILE_DIR = include/jwt-cpp/example/traits/CMakeFiles/nlohmann-json.dir

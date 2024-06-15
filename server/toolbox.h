@@ -16,7 +16,7 @@
 
 #include "parsing.h"
 
-//#include "xlnt/xlnt.hpp"
+#include "xlnt/xlnt.hpp"
 
 #include <Poco/Net/MailMessage.h>
 #include <Poco/Net/MailRecipient.h>
@@ -30,7 +30,10 @@
 #include <Poco/AutoPtr.h>
 #include <Poco/Exception.h>
 
+#include "MultipartParser.h"
+
 #include <string>
+#include <fstream>
 #include <chrono>
 #include <random>
 #include <iostream>
@@ -106,11 +109,24 @@ std::string rand_int(int length){
     return randomString;
 }
 
+int generate_unique_random(const std::vector<int>& existing_numbers) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 99999999);
+
+    int random_number;
+    do {
+        random_number = dis(gen);
+    } while (std::find(existing_numbers.begin(), existing_numbers.end(), random_number) != existing_numbers.end());
+
+    return random_number;
+}
+
 std::string confirmationCode = rand_int(6);
 
 //прием secret по post запросу
 void get_secret(const httplib::Request& req, httplib::Response& res){
-    secret_glob = req.has_param("SECRET") ? req.get_param_value("SECRET") : "";
+    secret_glob = req.has_param("SECRET") ? secret_glob = req.get_param_value("SECRET") : "not";
     std::cout << "jwt secret: " << secret_glob << "\n";
     res.set_content("secret poluchen", "text/plain");
 }
@@ -149,6 +165,8 @@ auto jwt_decode(std::string& token){
         std::string data2 = "get code";
         std::string data3 = "to do create";
         std::string data4 = "to do scan";
+        std::string data5 = "to do complete";
+        std::string data6 = "to do del";
 
         //извлечение данных
         if(data1 == decoded_token.get_payload_claim("command").as_string()){
@@ -165,7 +183,6 @@ auto jwt_decode(std::string& token){
         }
 
         if(data3 == decoded_token.get_payload_claim("command").as_string()){
-            std::string user_id = decoded_token.get_payload_claim("userId").as_string();
             std::string name = decoded_token.get_payload_claim("name").as_string();
             std::string deadline = decoded_token.get_payload_claim("deadline").as_string();
             std::string predmet = decoded_token.get_payload_claim("predmet").as_string();
@@ -188,16 +205,30 @@ auto jwt_decode(std::string& token){
             return data;
         }
 
+        if(data5 == decoded_token.get_payload_claim("command").as_string()){
+            std::string userId = decoded_token.get_payload_claim("userId").as_string();
+            std::string to_do_id = decoded_token.get_payload_claim("to_do_id").as_string();
+            std::string isCompleted = decoded_token.get_payload_claim("isCompleted").as_string();
+
+            std::vector<std::string> data {userId, to_do_id, isCompleted};
+
+            return data;
+        }
+
+        if(data6 == decoded_token.get_payload_claim("command").as_string()){
+            std::string to_do_id = decoded_token.get_payload_claim("to_do_id").as_string();
+
+            std::vector<std::string> data {to_do_id};
+
+            return data;
+        }
+
         std::cout << "JWT токен успешно расшифрован";
     }
     catch (const jwt::error::token_verification_error& e){
         std::cerr << "Token verification failed: " << e << std::endl;
     }
     return std::vector<std::string>{};
-}
-
-void add_raspisanie(){
-    parsing();
 }
 
 void register_user(const std::string& email, std::string& password){
@@ -331,16 +362,24 @@ void to_do_create(const httplib::Request& req, httplib::Response& res){
 
     std::vector<std::string> data = jwt_decode(jwt);
 
+    std::vector<int> existing_numbers;
+    auto cursor = collection_to_do.find({});
+    for (auto&& doc : cursor) {
+        if (doc["to_do_id"]) {
+            existing_numbers.push_back(doc["to_do_id"].get_int32());
+        }
+    }
+
     bsoncxx::document::value doc_value = document{}
-            << "userId" << data[0]
-            << "name" << data[1]
-            << "deadline" << data[2]
-            << "predmet" << data[3]
-            << "opisanie" << data[4]
-            << "data" << data[5]
-            << "teacher" << data[6]
-            << "group" << data[7]
-            << "isCompleted" << data[8]
+            << "to_do_id" << generate_unique_random(existing_numbers)
+            << "name" << data[0]
+            << "deadline" << data[1]
+            << "predmet" << data[2]
+            << "opisanie" << data[3]
+            << "data" << data[4]
+            << "teacher" << data[5]
+            << "group" << data[6]
+            << "isCompleted" << data[7]
             << finalize;
 
     bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_to_do.insert_one(doc_value.view());
@@ -380,10 +419,64 @@ void to_do_scan(const httplib::Request& req, httplib::Response& res){
     res.set_content(json_array, "application/json");
 }
 
-void to_do_is_complite(){
-    
+void to_do_is_complite(const httplib::Request& req, httplib::Response& res){
+    std::string jwt = req.has_param("JWT") ? req.get_param_value("JWT") : ""; //проверка на присутствие данных на JWT
+
+    std::vector<std::string> data = jwt_decode(jwt);
+
+    bsoncxx::document::value doc_value = document{}
+            << "userId" << data[0]
+            << "to_do_id" << data[1]
+            << "isCompleted" << data[2]
+            << finalize;
+
+    bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_to_do_complited.insert_one(doc_value.view());
+
+    res.set_content("to do completed", "text/plain");
+}
+
+void to_do_del(const httplib::Request& req, httplib::Response& res){
+    std::string jwt = req.has_param("JWT") ? req.get_param_value("JWT") : ""; //проверка на присутствие данных на JWT
+
+    std::vector<std::string> data = jwt_decode(jwt);
+
+    bsoncxx::builder::stream::document filter_builder;
+    filter_builder << "to_do_id" << data[0];
+
+    auto result1 = collection_to_do.delete_one(filter_builder.view());
+    auto result2 = collection_to_do_complited.delete_one(filter_builder.view());
+
+    if (result1) {
+        std::cout << "Deleted " << result1->deleted_count() << " document(s)" << std::endl;
+    } else {
+        std::cout << "No documents matched the filter." << std::endl;
+    }
+
+    if (result2) {
+        std::cout << "Deleted " << result2->deleted_count() << " document(s)" << std::endl;
+    } else {
+        std::cout << "No documents matched the filter." << std::endl;
+    }
+
+    res.set_content("to do deleted", "text/plain");
+}
+
+void add_raspisanie(const httplib::Request& req, httplib::Response& res){
+    auto file = req.get_file_value("file");
+    if (!file.content.empty()) {
+        // Сохраняем содержимое файла
+        std::ofstream outfile("rasp/", std::ios::binary);
+        outfile.write(file.content.data(), file.content.size());
+        outfile.close();
+    } else {
+        res.set_content("Failed to receive file", "text/plain");
+    }
+
+    parsing();
 
 
 
 
+
+    res.set_content("raspisanie created", "text/plain");
 }

@@ -1,0 +1,311 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						14,
+						15
+					]
+				},
+				{
+					"build" : "include/jwt-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-include.jwt-cpp-Debug-cece8990c81d5cfeffe8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "include/jwt-cpp"
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-Debug-c2199c334631578a77c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "cmake-build-debug/_deps/nlohmann_json-src"
+				},
+				{
+					"build" : "include/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-include.jwt-cpp.example-Debug-6ebff95085600dfeafa4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "include/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "include/jwt-cpp/example/traits",
+					"jsonFile" : "directory-include.jwt-cpp.example.traits-Debug-3af6a62b61cc3330e536.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "include/jwt-cpp/example/traits",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "server",
+					"targetIndexes" : 
+					[
+						14,
+						15
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "boost-json::@5a1719a0859bf68162ed",
+					"jsonFile" : "target-boost-json-Debug-5ee1eaaefb6fdcbaeb2a.json",
+					"name" : "boost-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "boost_json::@5a1719a0859bf68162ed",
+					"jsonFile" : "target-boost_json-Debug-ca676f43c5c0c21cb44b.json",
+					"name" : "boost_json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "es256k::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-es256k-Debug-78e96ad03075111a91f4.json",
+					"name" : "es256k",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-jwks-verify-Debug-57b587ad345d61191778.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify-run::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-jwks-verify-run-Debug-6463e9c7f3d6afdb1426.json",
+					"name" : "jwks-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "nlohmann-json::@5a1719a0859bf68162ed",
+					"jsonFile" : "target-nlohmann-json-Debug-9615a94832d60919b701.json",
+					"name" : "nlohmann-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "partial-claim-verifier::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-partial-claim-verifier-Debug-112f4505bb4c7f48c5e2.json",
+					"name" : "partial-claim-verifier",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-print-claims-Debug-c5e0c4e2bddabe843a81.json",
+					"name" : "print-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims-run::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-print-claims-run-Debug-aa845322b026124a60e6.json",
+					"name" : "print-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-private-claims-Debug-cdbae1d2a12a4c58235d.json",
+					"name" : "private-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-rsa-create-Debug-f0bd3b845919a4fb57ef.json",
+					"name" : "rsa-create",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create-run::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-rsa-create-run-Debug-1a1092c3b19545a1528d.json",
+					"name" : "rsa-create-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-rsa-verify-Debug-d955f802ac5d0932ac2c.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify-run::@24cb5c2c2cf77d1b714b",
+					"jsonFile" : "target-rsa-verify-run-Debug-5f2059c447fcf28609ab.json",
+					"name" : "rsa-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server-Debug-5c8be2ea0344966b5b81.json",
+					"name" : "server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "toolbox::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-toolbox-Debug-f4e68fc1cbd76ba6892c.json",
+					"name" : "toolbox",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/cmake-build-debug",
+		"source" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
