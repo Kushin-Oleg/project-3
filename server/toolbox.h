@@ -21,14 +21,16 @@
 #include <Poco/Net/MailMessage.h>
 #include <Poco/Net/MailRecipient.h>
 #include <Poco/Net/SMTPClientSession.h>
-#include <Poco/Net/MailMessage.h>
-#include <Poco/Net/MailRecipient.h>
 #include <Poco/Net/SecureSMTPClientSession.h> // Используем SecureSMTPClientSession для TLS
 #include <Poco/Net/SSLManager.h>
 #include <Poco/Net/AcceptCertificateHandler.h>
 #include <Poco/SharedPtr.h>
 #include <Poco/RegularExpression.h>
+#include <Poco/Net/Context.h>
+#include <Poco/AutoPtr.h>
+#include <Poco/Exception.h>
 
+#include <string>
 #include <chrono>
 #include <random>
 #include <iostream>
@@ -186,6 +188,7 @@ auto jwt_decode(std::string& token){
     catch (const jwt::error::token_verification_error& e){
         std::cerr << "Token verification failed: " << e << std::endl;
     }
+    return std::vector<std::string>{};
 }
 
 void add_raspisanie(){
@@ -193,37 +196,40 @@ void add_raspisanie(){
 }
 
 void register_user(const std::string& email, std::string& password){
-    // Регулярное выражение для проверки email                                              //
-    const std::string emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";     //
-                                                                                            // Это все проверка на почту
-    // Создаем объект регулярного выражения                                                 // что она написана нормально
-    Poco::RegularExpression regex(emailRegex);                                       //
-                                                                                            //
-    // Проверяем, соответствует ли email регулярному выражению
-    if (regex.match(email)){
-        bsoncxx::document::value doc_value = document{}
-                << "group" << "student"
-                << "email" << email
-                << "platform" << open_document
+    try {
+        // Регулярное выражение для проверки email
+        const std::string emailRegex = "^[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}$";
+        Poco::RegularExpression regex(emailRegex);
+        std::cout << "Регулярное выражение успешно создано\n";
+
+        // Проверяем, соответствует ли email регулярному выражению
+        if (regex.match(email)) {
+            std::cout << "Email прошел проверку регулярным выражением\n";
+            bsoncxx::document::value doc_value = document{}
+                    << "group" << "student"
+                    << "email" << email
+                    << "platform" << open_document
                     << "id" << rand_str(20)
                     << "password" << password
-                << close_document
-                << finalize;
+                    << close_document
+                    << finalize;
 
-        // Вставка документа в коллекцию
-        bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_user.insert_one(doc_value.view());
+            // Вставка документа в коллекцию
+            bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_user.insert_one(doc_value.view());
 
-        if (result) {
-            // Извлечение inserted_id как bsoncxx::oid
-            bsoncxx::oid inserted_id = result->inserted_id().get_oid().value;
+            if (result) {
+                // Извлечение inserted_id как bsoncxx::oid
+                bsoncxx::oid inserted_id = result->inserted_id().get_oid().value;
 
-            std::cout << "Документ добавлен в коллекцию с ID: " << inserted_id.to_string() << std::endl;
+                std::cout << "Документ добавлен в коллекцию с ID: " << inserted_id.to_string() << std::endl;
+            } else {
+                std::cout << "Ошибка вставки документа в коллекцию" << std::endl;
+            }
         } else {
-            std::cout << "Ошибка вставки документа в коллекцию" << std::endl;
+            std::cout << "Ваша почта введена не верно";
         }
-    }
-    else {
-        std::cout << "Ваша почта введена не верно";
+    } catch (const std::exception& e) {
+        std::cerr << "Ошибка регулярного выражения: " << e.what() << std::endl;
     }
 }
 
@@ -241,51 +247,48 @@ void reg_user_jwt(const httplib::Request& req, httplib::Response& res){
 }
 
 
-void login_user(const std::string& email, const std::string& password){
+void login_user(const std::string& email, const std::string& password) {
     try {
-        // Создаем фильтр для поиска документа по имени файла
-        bsoncxx::document::value filter = document{}
-                << "email" << email // Условие поиска: поле "email" = email
-                << "password" << password
-                << finalize;
+        // Создаем фильтр для поиска документа по email и паролю
+        bsoncxx::builder::stream::document filter_builder;
+        filter_builder << "email" << email << "password" << password;
+        bsoncxx::document::value filter = filter_builder << bsoncxx::builder::stream::finalize;
 
         // Выполняем запрос к коллекции
         mongocxx::stdx::optional<bsoncxx::document::value> result = collection_user.find_one(filter.view());
 
-        // Проверяем, найден ли документ (т.е. существует ли файл)
-        if(static_cast<bool>(result)) { // Возвращаем true, если файл найден, иначе false
-
-            Poco::Net::MailMessage message;  //создаём электронное письмо
-            message.setSender(
-                    "your_email@gmail.com"); // почта с которой будет отправлен пользователю код подтверждения
+        // Проверяем, найден ли документ
+        if (result) {
+            // Создаем и настраиваем сообщение электронной почты
+            Poco::Net::MailMessage message;
+            message.setSender("your_email@gmail.com");
             message.addRecipient(Poco::Net::MailRecipient(Poco::Net::MailRecipient::PRIMARY_RECIPIENT, email));
-            message.setSubject("Подтверждение регистрации"); //тема отправляемого сообщения
-            message.setContent("Ваш код подтверждения: " + confirmationCode); // код подтверждения
+            message.setSubject("Подтверждение регистрации");
+            message.setContent("Ваш код подтверждения: " + confirmationCode);
 
-            Poco::Net::SecureSMTPClientSession session("smtp.gmail.com", 587); //сессия отправки письма
-            session.login(Poco::Net::SMTPClientSession::AUTH_LOGIN, "your_email@gmail.com",
-                          "your_password"); // аутентификация почты-отправителя
+            // Устанавливаем сессию для отправки письма
+            Poco::Net::SecureSMTPClientSession session("smtp.mail.ru", 465);
+            session.login(Poco::Net::SMTPClientSession::AUTH_LOGIN, "tr_sda@mail.ru", "server_sender");
 
             // Создание TLS-соединения
             Poco::AutoPtr<Poco::Net::Context> pContext = new Poco::Net::Context(
-                    Poco::Net::Context::CLIENT_USE, "", "", "", // находимся в режиме клиента
+                    Poco::Net::Context::CLIENT_USE, "", "", "", // режим клиента
                     Poco::Net::Context::VERIFY_NONE, 9,
-                    false, // принимаем любой сертификат (ненадёжно но и так сойдет :) )
-                    "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH" //виды сертификатов?
+                    false, // принимаем любой сертификат (ненадёжно, но и так сойдет :) )
+                    "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"
             );
             Poco::Net::SSLManager::instance().initializeClient(nullptr, nullptr, pContext);
 
             // Запуск TLS с использованием контекста
             session.startTLS(pContext);
+            session.sendMessage(message); // отправка письма
 
-            session.sendMessage(message); //отправка письма с кодом
-
-            std::cout << "письмо отправлено(для повторной авторизации)!"
-                      << std::endl; //уведоиление об успешной отправке письма
+            std::cout << "Письмо отправлено (для повторной авторизации)!" << std::endl;
+        } else {
+            std::cout << "Неправильный email или пароль." << std::endl;
         }
-    }
-    catch (const Poco::Exception& exc) {
-        std::cerr << "ошибка отправки письма: " << exc.displayText() << std::endl;
+    } catch (const Poco::Exception& exc) {
+        std::cerr << "Ошибка отправки письма: " << exc.displayText() << std::endl;
     }
 }
 
@@ -338,7 +341,7 @@ void to_do_create(const httplib::Request& req, httplib::Response& res){
     bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_to_do.insert_one(doc_value.view());
 }
 
-void to_do_scan(const httplib::Request& req, httplib::Response& res){
+/*void to_do_scan(const httplib::Request& req, httplib::Response& res){
     std::string jwt = req.has_param("JWT") ? req.get_param_value("JWT") : ""; //проверка на присутствие данных на JWT
 
 
@@ -350,3 +353,4 @@ void to_do_scan(const httplib::Request& req, httplib::Response& res){
 
     //res.set_content(, "application/json")
 }
+*/

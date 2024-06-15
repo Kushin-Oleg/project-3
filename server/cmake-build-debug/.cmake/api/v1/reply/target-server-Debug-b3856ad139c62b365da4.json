@@ -1,0 +1,566 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "server"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_executable",
+			"add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"_find_package",
+			"find_package",
+			"find_dependency",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"/home/kukushka/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"CMakeLists.txt",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetSSLTargets.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetSSLConfig.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoConfig.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoUtilTargets.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoUtilConfig.cmake",
+			"/snap/clion/282/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoXMLTargets.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoXMLConfig.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationTargets.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoFoundationConfig.cmake",
+			"/usr/lib/x86_64-linux-gnu/cmake/Poco/PocoNetConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 598,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 35,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 45,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 31,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 7
+			},
+			{
+				"file" : 4,
+				"parent" : 8
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 29,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 10
+			},
+			{
+				"file" : 3,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 7,
+				"parent" : 12
+			},
+			{
+				"file" : 2,
+				"parent" : 13
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 71,
+				"parent" : 14
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 3,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 16
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 17
+			},
+			{
+				"file" : 6,
+				"parent" : 18
+			},
+			{
+				"command" : 4,
+				"file" : 6,
+				"line" : 5,
+				"parent" : 19
+			},
+			{
+				"file" : 5,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 71,
+				"parent" : 21
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 3,
+				"parent" : 19
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 23
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 24
+			},
+			{
+				"file" : 9,
+				"parent" : 25
+			},
+			{
+				"command" : 4,
+				"file" : 9,
+				"line" : 10,
+				"parent" : 26
+			},
+			{
+				"file" : 8,
+				"parent" : 27
+			},
+			{
+				"command" : 3,
+				"file" : 8,
+				"line" : 71,
+				"parent" : 28
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 30,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 30
+			},
+			{
+				"file" : 4,
+				"parent" : 31
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 29,
+				"parent" : 32
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 33
+			},
+			{
+				"file" : 12,
+				"parent" : 34
+			},
+			{
+				"command" : 7,
+				"file" : 12,
+				"line" : 2,
+				"parent" : 35
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 36
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 859,
+				"parent" : 37
+			},
+			{
+				"file" : 11,
+				"parent" : 38
+			},
+			{
+				"command" : 4,
+				"file" : 11,
+				"line" : 8,
+				"parent" : 39
+			},
+			{
+				"file" : 10,
+				"parent" : 40
+			},
+			{
+				"command" : 3,
+				"file" : 10,
+				"line" : 71,
+				"parent" : 41
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 23,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++23 -fdiagnostics-color=always"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "POCO_ENABLE_CPP11"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "POCO_ENABLE_CPP14"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "POCO_HAVE_FD_EPOLL"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "POCO_OS_FAMILY_UNIX"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "POCO_UNBUNDLED"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "XLNT_STATIC=1"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_DEBUG"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_FILE_OFFSET_BITS=64"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_LARGEFILE64_SOURCE"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_REENTRANT"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_THREAD_SAFE"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "_XOPEN_SOURCE=500"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 43,
+					"path" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/include/cpp-httplib-master"
+				},
+				{
+					"backtrace" : 44,
+					"path" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/include/json/include"
+				},
+				{
+					"backtrace" : 45,
+					"path" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/server"
+				},
+				{
+					"backtrace" : 45,
+					"path" : "/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc"
+				},
+				{
+					"backtrace" : 45,
+					"path" : "/usr/local/include/bsoncxx/v_noabi"
+				},
+				{
+					"backtrace" : 45,
+					"path" : "/usr/local/include/mongocxx/v_noabi"
+				},
+				{
+					"backtrace" : 46,
+					"path" : "/home/kukushka/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/project-3/server/include/jwt-cpp/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/kukushka/vcpkg/installed/x64-linux/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					46,
+					5,
+					5
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "server::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libcrypto.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libssl.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lbsoncxx",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lmongocxx",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lbsoncxx",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoNetSSL.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/home/kukushka/vcpkg/installed/x64-linux/debug/lib/libxlntd.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lmongocxx",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoNet.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoCrypto.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libssl.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libcrypto.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoUtil.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoXML.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 29,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libexpat.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoJSON.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libPocoFoundation.so.80",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libpcre.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libz.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "server",
+	"nameOnDisk" : "server",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

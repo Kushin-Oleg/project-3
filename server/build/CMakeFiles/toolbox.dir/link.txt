@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtoolbox.a 
+/usr/bin/ranlib libtoolbox.a

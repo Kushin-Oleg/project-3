@@ -10,7 +10,7 @@ int main(){
     server.Post("/getkey", get_secret);
 
     //создание пользователя
-    server.Post("/create_user)", reg_user_jwt);
+    server.Post("/create_user", reg_user_jwt);
 
     //авторизация через существующий аккаунт
     server.Post("/login_user", log_user_1);
@@ -20,7 +20,7 @@ int main(){
     server.Post("/to_do_create", to_do_create);
 
     //проверка новых листов to do и их отправка
-    server.Post("/to_do_scan", to_do_scan);
+    //server.Post("/to_do_scan", to_do_scan);
 
     //пост запрос для qr кода
 

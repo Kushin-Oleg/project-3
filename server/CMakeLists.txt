@@ -1,7 +1,7 @@
 #установка версий, языка и названия
 cmake_minimum_required(VERSION 3.28)
 project(server)
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 23)
  #добавил библиотеку http
 include_directories(include/cpp-httplib-master)
 #добавил библиотеку-сноску где у меня будет реализован функционал приложения
@@ -24,10 +24,11 @@ include_directories(server
         ${BSON_INCLUDE_DIRS}
         ${MONGO_INCLUDE_DIRS})
 #подключил библиотеку для парсинга таблиц эксель
-
+find_package(Xlnt CONFIG REQUIRED)
 #подключил библиотеку для авторизации
 set(Poco_DIR "/usr/local/lib/cmake/Poco")
 find_package(Poco REQUIRED COMPONENTS Net Foundation)
+find_package(Poco REQUIRED COMPONENTS NetSSL)
 #создание исполниельного файла
 add_executable(server main.cpp)
 target_link_libraries(server PRIVATE jwt-cpp)
@@ -39,3 +40,6 @@ target_link_libraries(server PRIVATE
 )
 
 target_link_libraries(server PRIVATE ${Poco_LIBRARIES})
+target_link_libraries(server PRIVATE Poco::NetSSL)
+
+target_link_libraries(server PRIVATE xlnt::xlnt)
