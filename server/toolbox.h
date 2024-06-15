@@ -112,6 +112,7 @@ std::string confirmationCode = rand_int(6);
 void get_secret(const httplib::Request& req, httplib::Response& res){
     secret_glob = req.has_param("SECRET") ? req.get_param_value("SECRET") : "";
     std::cout << "jwt secret: " << secret_glob << "\n";
+    res.set_content("secret poluchen", "text/plain");
 }
 
 //функция для создания jwt токена
@@ -166,7 +167,7 @@ auto jwt_decode(std::string& token){
         if(data3 == decoded_token.get_payload_claim("command").as_string()){
             std::string user_id = decoded_token.get_payload_claim("userId").as_string();
             std::string name = decoded_token.get_payload_claim("name").as_string();
-            std::string deadline = decoded_token.get_payload_claim("predmet").as_string();
+            std::string deadline = decoded_token.get_payload_claim("deadline").as_string();
             std::string predmet = decoded_token.get_payload_claim("predmet").as_string();
             std::string opisanie = decoded_token.get_payload_claim("opisanie").as_string();
             std::string data = decoded_token.get_payload_claim("data").as_string();
@@ -181,6 +182,10 @@ auto jwt_decode(std::string& token){
 
         if(data4 == decoded_token.get_payload_claim("command").as_string()){
             std::string group = decoded_token.get_payload_claim("group").as_string();
+
+            std::vector<std::string> data {group};
+
+            return data;
         }
 
         std::cout << "JWT токен успешно расшифрован";
@@ -339,18 +344,46 @@ void to_do_create(const httplib::Request& req, httplib::Response& res){
             << finalize;
 
     bsoncxx::stdx::optional<mongocxx::result::insert_one> result = collection_to_do.insert_one(doc_value.view());
+
+    res.set_content("to do created", "text/plain");
 }
 
-/*void to_do_scan(const httplib::Request& req, httplib::Response& res){
+void to_do_scan(const httplib::Request& req, httplib::Response& res){
     std::string jwt = req.has_param("JWT") ? req.get_param_value("JWT") : ""; //проверка на присутствие данных на JWT
 
+    std::vector<std::string> data = jwt_decode(jwt);
 
+    bsoncxx::builder::stream::document filter_builder;
+    filter_builder << "group" << data[0];
 
+    auto cursor = collection_to_do.find(filter_builder.view());
 
-    document filter_doc{};
-    filter_doc << "group" << ;
+    std::vector<std::string> jsonArray;
 
+    for (auto&& doc : cursor) {
+        // Преобразование BSON документа в JSON строку
+        std::string json_doc = bsoncxx::to_json(doc);
+        // Добавление JSON строки в массив
+        jsonArray.push_back(json_doc);
+    }
 
-    //res.set_content(, "application/json")
+    // Преобразование массива JSON строк в один JSON массив
+    std::string json_array = "[";
+    for (size_t i = 0; i < jsonArray.size(); ++i) {
+        json_array += jsonArray[i];
+        if (i < jsonArray.size() - 1) {
+            json_array += ",";
+        }
+    }
+    json_array += "]";
+
+    res.set_content(json_array, "application/json");
 }
-*/
+
+void to_do_is_complite(){
+    
+
+
+
+
+}
